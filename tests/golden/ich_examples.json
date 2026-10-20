@@ -1,0 +1,1724 @@
+{
+ "_about": [
+  "Golden values for the e2br3 v0.1 core subset, transcribed from the ICH E2B(R3) Example Instances v2.0",
+  "spreadsheets (tests/fixtures/ich-examples/*.xls[x], not committed). One entry per non-empty core-subset cell.",
+  "row = spreadsheet row number (1-based, as shown in Excel); col = column letter; n = iteration",
+  "(column C = 1st, D = 2nd, E = 3rd). value = the cell exactly as Excel stores it, as a string",
+  "(integral floats written without '.0'). Rows marked known_issue are spreadsheet errors or IG ambiguities",
+  "documented in docs/known-issues.md; the test expects them NOT to match the XML.",
+  "Example 3: the n-th G.k.9.i.* column is the n-th causality assessment in document order across all drugs."
+ ],
+ "files": {
+  "1-1_ExampleCase_literature_initial_v1_0.xml": {
+   "spreadsheet": "1-1_Example_literature_initial_v1_0.xlsx",
+   "values": [
+    {
+     "id": "N.1.1",
+     "n": 1,
+     "row": 6,
+     "col": "C",
+     "value": "ichicsr",
+     "known_issue": "KI-1"
+    },
+    {
+     "id": "N.1.2",
+     "n": 1,
+     "row": 7,
+     "col": "C",
+     "value": "DSJP-B0123456"
+    },
+    {
+     "id": "N.1.3",
+     "n": 1,
+     "row": 8,
+     "col": "C",
+     "value": "DSJP"
+    },
+    {
+     "id": "N.1.4",
+     "n": 1,
+     "row": 9,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.1.5",
+     "n": 1,
+     "row": 10,
+     "col": "C",
+     "value": "20120720100000"
+    },
+    {
+     "id": "N.2.r.1",
+     "n": 1,
+     "row": 12,
+     "col": "C",
+     "value": "DSJP-B0123456-Lit1"
+    },
+    {
+     "id": "N.2.r.2",
+     "n": 1,
+     "row": 13,
+     "col": "C",
+     "value": "DSJP"
+    },
+    {
+     "id": "N.2.r.3",
+     "n": 1,
+     "row": 14,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.2.r.4",
+     "n": 1,
+     "row": 15,
+     "col": "C",
+     "value": "20120720100001+09"
+    },
+    {
+     "id": "C.1.1",
+     "n": 1,
+     "row": 18,
+     "col": "C",
+     "value": "JP-DSJP-DSJ-2009-98765-1"
+    },
+    {
+     "id": "C.1.2",
+     "n": 1,
+     "row": 19,
+     "col": "C",
+     "value": "20120720100001+09"
+    },
+    {
+     "id": "C.1.3",
+     "n": 1,
+     "row": 20,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "C.1.4",
+     "n": 1,
+     "row": 21,
+     "col": "C",
+     "value": "20090622"
+    },
+    {
+     "id": "C.1.5",
+     "n": 1,
+     "row": 22,
+     "col": "C",
+     "value": "20100412"
+    },
+    {
+     "id": "C.1.8.1",
+     "n": 1,
+     "row": 30,
+     "col": "C",
+     "value": "JP-DSJP-DSJ-2009-98765-1"
+    },
+    {
+     "id": "C.2.r.3",
+     "n": 1,
+     "row": 53,
+     "col": "C",
+     "value": "JP"
+    },
+    {
+     "id": "C.2.r.4",
+     "n": 1,
+     "row": 54,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "C.4.r.1",
+     "n": 1,
+     "row": 75,
+     "col": "C",
+     "value": "K. Kudo, et al. (2009) A Case of Heparin-Induced Thrombocytopenia and\nDisseminated Intravascular Coagulation during Treatment for Drug-Induced\nPneumonia. Journal of Japanese Respiratory Society, The 49th Annual Meeting of\nThe Japanese Respiratory Society, 47: p.316"
+    },
+    {
+     "id": "C.4.r.2",
+     "n": 1,
+     "row": 76,
+     "col": "C",
+     "value": "Application/PDF"
+    },
+    {
+     "id": "D.1",
+     "n": 1,
+     "row": 85,
+     "col": "C",
+     "value": "T.O."
+    },
+    {
+     "id": "D.2.2a",
+     "n": 1,
+     "row": 94,
+     "col": "C",
+     "value": "81"
+    },
+    {
+     "id": "D.2.2b",
+     "n": 1,
+     "row": 95,
+     "col": "C",
+     "value": "a"
+    },
+    {
+     "id": "D.5",
+     "n": 1,
+     "row": 102,
+     "col": "C",
+     "value": "2"
+    },
+    {
+     "id": "E.i.1.1a",
+     "n": 1,
+     "row": 171,
+     "col": "C",
+     "value": "間質性肺炎"
+    },
+    {
+     "id": "E.i.1.1b",
+     "n": 1,
+     "row": 172,
+     "col": "C",
+     "value": "JA"
+    },
+    {
+     "id": "E.i.1.2",
+     "n": 1,
+     "row": 173,
+     "col": "C",
+     "value": "INTERSTITIAL PNEUMONIA"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 1,
+     "row": 174,
+     "col": "C",
+     "value": "15"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 1,
+     "row": 175,
+     "col": "C",
+     "value": "10022617"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 1,
+     "row": 178,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2b",
+     "n": 1,
+     "row": 179,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2c",
+     "n": 1,
+     "row": 180,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2d",
+     "n": 1,
+     "row": 181,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2e",
+     "n": 1,
+     "row": 182,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2f",
+     "n": 1,
+     "row": 183,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.4",
+     "n": 1,
+     "row": 184,
+     "col": "C",
+     "value": "20081009"
+    },
+    {
+     "id": "E.i.5",
+     "n": 1,
+     "row": 185,
+     "col": "C",
+     "value": "20081201"
+    },
+    {
+     "id": "E.i.7",
+     "n": 1,
+     "row": 188,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.1",
+     "n": 1,
+     "row": 207,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.2.2",
+     "n": 1,
+     "row": 214,
+     "col": "C",
+     "value": "MEVALOTIN"
+    },
+    {
+     "id": "G.k.2.3.r.1",
+     "n": 1,
+     "row": 216,
+     "col": "C",
+     "value": "PRAVASTATIN SODIUM"
+    },
+    {
+     "id": "G.k.4.r.10.1",
+     "n": 1,
+     "row": 243,
+     "col": "C",
+     "value": "PER ORAL"
+    },
+    {
+     "id": "G.k.4.r.10.2a",
+     "n": 1,
+     "row": 244,
+     "col": "C",
+     "value": "048",
+     "known_issue": "KI-2"
+    },
+    {
+     "id": "G.k.8",
+     "n": 1,
+     "row": 259,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.9.i.2.r.1",
+     "n": 1,
+     "row": 263,
+     "col": "C",
+     "value": "REPORTER"
+    },
+    {
+     "id": "G.k.9.i.2.r.2",
+     "n": 1,
+     "row": 264,
+     "col": "C",
+     "value": "GLOBAL INTROSPECTION"
+    },
+    {
+     "id": "G.k.9.i.2.r.3",
+     "n": 1,
+     "row": 265,
+     "col": "C",
+     "value": "RELATED"
+    },
+    {
+     "id": "H.1",
+     "n": 1,
+     "row": 276,
+     "col": "C",
+     "value": "An 81-year-old female patient received Mevalotin (pravastatin sodium) 20mg  for hyperlipidemia since July 2008. The patient experienced interstitial pneumonia on 08 October 2008 (inpatient hospitalization)."
+    }
+   ]
+  },
+  "1-2_ExampleCase_nullification_v1_0.xml": {
+   "spreadsheet": "1-2_Example_nullification_v1_0.xlsx",
+   "values": [
+    {
+     "id": "N.1.1",
+     "n": 1,
+     "row": 6,
+     "col": "C",
+     "value": "ichicsr",
+     "known_issue": "KI-1"
+    },
+    {
+     "id": "N.1.2",
+     "n": 1,
+     "row": 7,
+     "col": "C",
+     "value": "DSJP-B0123456"
+    },
+    {
+     "id": "N.1.3",
+     "n": 1,
+     "row": 8,
+     "col": "C",
+     "value": "DSJP"
+    },
+    {
+     "id": "N.1.4",
+     "n": 1,
+     "row": 9,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.1.5",
+     "n": 1,
+     "row": 10,
+     "col": "C",
+     "value": "20120720100000"
+    },
+    {
+     "id": "N.2.r.1",
+     "n": 1,
+     "row": 12,
+     "col": "C",
+     "value": "DSJP-B0123456-Lit2"
+    },
+    {
+     "id": "N.2.r.2",
+     "n": 1,
+     "row": 13,
+     "col": "C",
+     "value": "DSJP"
+    },
+    {
+     "id": "N.2.r.3",
+     "n": 1,
+     "row": 14,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.2.r.4",
+     "n": 1,
+     "row": 15,
+     "col": "C",
+     "value": "20120720100002+09"
+    },
+    {
+     "id": "C.1.1",
+     "n": 1,
+     "row": 18,
+     "col": "C",
+     "value": "JP-DSJP-2010-87654-1"
+    },
+    {
+     "id": "C.1.2",
+     "n": 1,
+     "row": 19,
+     "col": "C",
+     "value": "20120720100002+09"
+    },
+    {
+     "id": "C.1.3",
+     "n": 1,
+     "row": 20,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "C.1.4",
+     "n": 1,
+     "row": 21,
+     "col": "C",
+     "value": "20100301"
+    },
+    {
+     "id": "C.1.5",
+     "n": 1,
+     "row": 22,
+     "col": "C",
+     "value": "20100412"
+    },
+    {
+     "id": "C.1.8.1",
+     "n": 1,
+     "row": 30,
+     "col": "C",
+     "value": "JP-DSJP-2010-87654-1"
+    },
+    {
+     "id": "C.1.11.2",
+     "n": 1,
+     "row": 39,
+     "col": "C",
+     "value": "It was found that this case was duplicate of JP-DSJP-DSJ-2009-98765-1 ."
+    },
+    {
+     "id": "C.2.r.3",
+     "n": 1,
+     "row": 53,
+     "col": "C",
+     "value": "JP"
+    },
+    {
+     "id": "C.2.r.4",
+     "n": 1,
+     "row": 54,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "C.4.r.1",
+     "n": 1,
+     "row": 75,
+     "col": "C",
+     "value": "K. Okamura, et al. (2010) A Case of Drug-Induced Pneumonia Associated with a Complication of Heparin-Induced\nThrombocytopenia during Follow-up Observation. Journal of Japanese Respiratory Society, 48: p.157-p.161"
+    },
+    {
+     "id": "C.4.r.2",
+     "n": 1,
+     "row": 76,
+     "col": "C",
+     "value": "Application/PDF"
+    },
+    {
+     "id": "D.1",
+     "n": 1,
+     "row": 85,
+     "col": "C",
+     "value": "T.O."
+    },
+    {
+     "id": "D.2.2a",
+     "n": 1,
+     "row": 94,
+     "col": "C",
+     "value": "81"
+    },
+    {
+     "id": "D.2.2b",
+     "n": 1,
+     "row": 95,
+     "col": "C",
+     "value": "a"
+    },
+    {
+     "id": "D.5",
+     "n": 1,
+     "row": 102,
+     "col": "C",
+     "value": "2"
+    },
+    {
+     "id": "E.i.1.1a",
+     "n": 1,
+     "row": 171,
+     "col": "C",
+     "value": "間質性肺炎"
+    },
+    {
+     "id": "E.i.1.1b",
+     "n": 1,
+     "row": 172,
+     "col": "C",
+     "value": "JA"
+    },
+    {
+     "id": "E.i.1.2",
+     "n": 1,
+     "row": 173,
+     "col": "C",
+     "value": "INTERSTITIAL PNEUMONIA"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 1,
+     "row": 174,
+     "col": "C",
+     "value": "15"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 1,
+     "row": 175,
+     "col": "C",
+     "value": "10022617"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 1,
+     "row": 178,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2b",
+     "n": 1,
+     "row": 179,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2c",
+     "n": 1,
+     "row": 180,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2d",
+     "n": 1,
+     "row": 181,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2e",
+     "n": 1,
+     "row": 182,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2f",
+     "n": 1,
+     "row": 183,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.4",
+     "n": 1,
+     "row": 184,
+     "col": "C",
+     "value": "20081009"
+    },
+    {
+     "id": "E.i.5",
+     "n": 1,
+     "row": 185,
+     "col": "C",
+     "value": "20081201"
+    },
+    {
+     "id": "E.i.7",
+     "n": 1,
+     "row": 188,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.1",
+     "n": 1,
+     "row": 207,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.2.2",
+     "n": 1,
+     "row": 214,
+     "col": "C",
+     "value": "MEVALOTIN"
+    },
+    {
+     "id": "G.k.2.3.r.1",
+     "n": 1,
+     "row": 216,
+     "col": "C",
+     "value": "PRAVASTATIN SODIUM"
+    },
+    {
+     "id": "G.k.4.r.10.1",
+     "n": 1,
+     "row": 243,
+     "col": "C",
+     "value": "PER ORAL"
+    },
+    {
+     "id": "G.k.4.r.10.2a",
+     "n": 1,
+     "row": 244,
+     "col": "C",
+     "value": "048",
+     "known_issue": "KI-2"
+    },
+    {
+     "id": "G.k.8",
+     "n": 1,
+     "row": 259,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.9.i.2.r.1",
+     "n": 1,
+     "row": 263,
+     "col": "C",
+     "value": "REPORTER"
+    },
+    {
+     "id": "G.k.9.i.2.r.2",
+     "n": 1,
+     "row": 264,
+     "col": "C",
+     "value": "GLOBAL INTROSPECTION"
+    },
+    {
+     "id": "G.k.9.i.2.r.3",
+     "n": 1,
+     "row": 265,
+     "col": "C",
+     "value": "RELATED"
+    },
+    {
+     "id": "H.1",
+     "n": 1,
+     "row": 276,
+     "col": "C",
+     "value": "An 81-year-old female patient received Mevalotin (pravastatin sodium) 20mg  for hyperlipidemia since July 2008. The patient experienced interstitial pneumonia on 08 October 2008 (inpatient hospitalization)."
+    }
+   ]
+  },
+  "2-1_ExampleCase_newNum_initial_v1_0.xml": {
+   "spreadsheet": "2-1_Example_newNum_initial_v1_0.xls",
+   "values": [
+    {
+     "id": "N.1.1",
+     "n": 1,
+     "row": 6,
+     "col": "C",
+     "value": "ichicsr",
+     "known_issue": "KI-1"
+    },
+    {
+     "id": "N.1.2",
+     "n": 1,
+     "row": 7,
+     "col": "C",
+     "value": "HC-B0123456"
+    },
+    {
+     "id": "N.1.3",
+     "n": 1,
+     "row": 8,
+     "col": "C",
+     "value": "HEALTHCANVIG"
+    },
+    {
+     "id": "N.1.4",
+     "n": 1,
+     "row": 9,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.1.5",
+     "n": 1,
+     "row": 10,
+     "col": "C",
+     "value": "20120701010000"
+    },
+    {
+     "id": "N.2.r.1",
+     "n": 1,
+     "row": 12,
+     "col": "C",
+     "value": "HC-M0123456-Initial_MAH_nonHCP"
+    },
+    {
+     "id": "N.2.r.2",
+     "n": 1,
+     "row": 13,
+     "col": "C",
+     "value": "HEALTHCANVIG"
+    },
+    {
+     "id": "N.2.r.3",
+     "n": 1,
+     "row": 14,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.2.r.4",
+     "n": 1,
+     "row": 15,
+     "col": "C",
+     "value": "20120701000001"
+    },
+    {
+     "id": "C.1.1",
+     "n": 1,
+     "row": 17,
+     "col": "C",
+     "value": "CA-HEALTHCANVIG-000123456"
+    },
+    {
+     "id": "C.1.3",
+     "n": 1,
+     "row": 19,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "C.1.4",
+     "n": 1,
+     "row": 20,
+     "col": "C",
+     "value": "20120630"
+    },
+    {
+     "id": "C.1.5",
+     "n": 1,
+     "row": 21,
+     "col": "C",
+     "value": "20120630"
+    },
+    {
+     "id": "C.1.8.1",
+     "n": 1,
+     "row": 28,
+     "col": "C",
+     "value": "CA-HEALTHCANVIG-000123456"
+    },
+    {
+     "id": "C.2.r.3",
+     "n": 1,
+     "row": 49,
+     "col": "C",
+     "value": "CA"
+    },
+    {
+     "id": "C.2.r.4",
+     "n": 1,
+     "row": 50,
+     "col": "C",
+     "value": "5"
+    },
+    {
+     "id": "D.1",
+     "n": 1,
+     "row": 81,
+     "col": "C",
+     "value": "MSK"
+    },
+    {
+     "id": "D.2.2a",
+     "n": 1,
+     "row": 90,
+     "col": "C",
+     "value": "42"
+    },
+    {
+     "id": "D.2.2b",
+     "n": 1,
+     "row": 91,
+     "col": "C",
+     "value": "a"
+    },
+    {
+     "id": "D.5",
+     "n": 1,
+     "row": 97,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "E.i.1.2",
+     "n": 1,
+     "row": 168,
+     "col": "C",
+     "value": "appears to be psoriasis plaques on his head"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 1,
+     "row": 169,
+     "col": "C",
+     "value": "15"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 1,
+     "row": 170,
+     "col": "C",
+     "value": "10037157"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 1,
+     "row": 173,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2b",
+     "n": 1,
+     "row": 174,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2c",
+     "n": 1,
+     "row": 175,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2d",
+     "n": 1,
+     "row": 176,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2e",
+     "n": 1,
+     "row": 177,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2f",
+     "n": 1,
+     "row": 178,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.4",
+     "n": 1,
+     "row": 179,
+     "col": "C",
+     "value": "ASKU"
+    },
+    {
+     "id": "E.i.7",
+     "n": 1,
+     "row": 183,
+     "col": "C",
+     "value": "3"
+    },
+    {
+     "id": "G.k.1",
+     "n": 1,
+     "row": 202,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.2.2",
+     "n": 1,
+     "row": 208,
+     "col": "C",
+     "value": "Vivacor"
+    },
+    {
+     "id": "G.k.2.3.r.1",
+     "n": 1,
+     "row": 210,
+     "col": "C",
+     "value": "bisoprolol"
+    },
+    {
+     "id": "G.k.4.r.10.1",
+     "n": 1,
+     "row": 237,
+     "col": "C",
+     "value": "p.o."
+    },
+    {
+     "id": "G.k.4.r.10.2a",
+     "n": 1,
+     "row": 238,
+     "col": "C",
+     "value": "048",
+     "known_issue": "KI-2"
+    },
+    {
+     "id": "G.k.8",
+     "n": 1,
+     "row": 252,
+     "col": "C",
+     "value": "4"
+    },
+    {
+     "id": "H.1",
+     "n": 1,
+     "row": 267,
+     "col": "C",
+     "value": "After the patient started Viacor for blood pressure control, he complained of itchy and flaky scalp."
+    }
+   ]
+  },
+  "2-2_ExampleCase_newNum_F-up_v1_0.xml": {
+   "spreadsheet": "2-2_Example_newNum_F-up_v1_0.xls",
+   "values": [
+    {
+     "id": "N.1.1",
+     "n": 1,
+     "row": 6,
+     "col": "C",
+     "value": "ichicsr",
+     "known_issue": "KI-1"
+    },
+    {
+     "id": "N.1.2",
+     "n": 1,
+     "row": 7,
+     "col": "C",
+     "value": "HC-B7890123"
+    },
+    {
+     "id": "N.1.3",
+     "n": 1,
+     "row": 8,
+     "col": "C",
+     "value": "HCPOSTMARKET"
+    },
+    {
+     "id": "N.1.4",
+     "n": 1,
+     "row": 9,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.1.5",
+     "n": 1,
+     "row": 10,
+     "col": "C",
+     "value": "20120716010000"
+    },
+    {
+     "id": "N.2.r.1",
+     "n": 1,
+     "row": 12,
+     "col": "C",
+     "value": "HC-M0789012-FU_MAH_HCP"
+    },
+    {
+     "id": "N.2.r.2",
+     "n": 1,
+     "row": 13,
+     "col": "C",
+     "value": "HCPOSTMARKET"
+    },
+    {
+     "id": "N.2.r.3",
+     "n": 1,
+     "row": 14,
+     "col": "C",
+     "value": "ICHTEST"
+    },
+    {
+     "id": "N.2.r.4",
+     "n": 1,
+     "row": 15,
+     "col": "C",
+     "value": "20120716000001"
+    },
+    {
+     "id": "C.1.1",
+     "n": 1,
+     "row": 17,
+     "col": "C",
+     "value": "CA-HCPOSTMARKET-F000789012"
+    },
+    {
+     "id": "C.1.3",
+     "n": 1,
+     "row": 19,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "C.1.4",
+     "n": 1,
+     "row": 20,
+     "col": "C",
+     "value": "20120630"
+    },
+    {
+     "id": "C.1.5",
+     "n": 1,
+     "row": 21,
+     "col": "C",
+     "value": "20120715"
+    },
+    {
+     "id": "C.1.8.1",
+     "n": 1,
+     "row": 28,
+     "col": "C",
+     "value": "CA-HEALTHCANVIG-000123456"
+    },
+    {
+     "id": "C.2.r.3",
+     "n": 1,
+     "row": 49,
+     "col": "C",
+     "value": "CA"
+    },
+    {
+     "id": "C.2.r.4",
+     "n": 1,
+     "row": 50,
+     "col": "C",
+     "value": "5"
+    },
+    {
+     "id": "D.1",
+     "n": 1,
+     "row": 81,
+     "col": "C",
+     "value": "MSK"
+    },
+    {
+     "id": "D.2.2a",
+     "n": 1,
+     "row": 90,
+     "col": "C",
+     "value": "42"
+    },
+    {
+     "id": "D.2.2b",
+     "n": 1,
+     "row": 91,
+     "col": "C",
+     "value": "a"
+    },
+    {
+     "id": "D.5",
+     "n": 1,
+     "row": 97,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "E.i.1.2",
+     "n": 1,
+     "row": 168,
+     "col": "C",
+     "value": "appears to be psoriasis plaques on his head"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 1,
+     "row": 169,
+     "col": "C",
+     "value": "15"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 1,
+     "row": 170,
+     "col": "C",
+     "value": "10037157"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 1,
+     "row": 173,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2b",
+     "n": 1,
+     "row": 174,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2c",
+     "n": 1,
+     "row": 175,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2d",
+     "n": 1,
+     "row": 176,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2e",
+     "n": 1,
+     "row": 177,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2f",
+     "n": 1,
+     "row": 178,
+     "col": "C",
+     "value": "true"
+    },
+    {
+     "id": "E.i.4",
+     "n": 1,
+     "row": 179,
+     "col": "C",
+     "value": "201205"
+    },
+    {
+     "id": "E.i.7",
+     "n": 1,
+     "row": 183,
+     "col": "C",
+     "value": "2"
+    },
+    {
+     "id": "G.k.1",
+     "n": 1,
+     "row": 202,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.2.2",
+     "n": 1,
+     "row": 208,
+     "col": "C",
+     "value": "Vivacor"
+    },
+    {
+     "id": "G.k.2.3.r.1",
+     "n": 1,
+     "row": 210,
+     "col": "C",
+     "value": "bisoprolol"
+    },
+    {
+     "id": "G.k.4.r.10.1",
+     "n": 1,
+     "row": 237,
+     "col": "C",
+     "value": "p.o."
+    },
+    {
+     "id": "G.k.4.r.10.2a",
+     "n": 1,
+     "row": 238,
+     "col": "C",
+     "value": "048",
+     "known_issue": "KI-2"
+    },
+    {
+     "id": "G.k.8",
+     "n": 1,
+     "row": 252,
+     "col": "C",
+     "value": "4"
+    },
+    {
+     "id": "H.1",
+     "n": 1,
+     "row": 267,
+     "col": "C",
+     "value": "After the patient started Viacor for blood pressure control, he complained of itchy and flaky scalp.\n2012-07-15: Pharmacist claimed that the discharge summary showed a diagnosis of new onset psoriasis of the scalp after starting Vivacor.  Family history included psoriasis suffered by the father. "
+    }
+   ]
+  },
+  "3_ExampleCase_Clinical_trial_v1_0.xml": {
+   "spreadsheet": "3_Example_Clinical trial_v1_0.xls",
+   "values": [
+    {
+     "id": "N.1.1",
+     "n": 1,
+     "row": 6,
+     "col": "C",
+     "value": "ichicsr",
+     "known_issue": "KI-1"
+    },
+    {
+     "id": "N.1.2",
+     "n": 1,
+     "row": 7,
+     "col": "C",
+     "value": "XYZ-0123456"
+    },
+    {
+     "id": "N.1.3",
+     "n": 1,
+     "row": 8,
+     "col": "C",
+     "value": "XYZ"
+    },
+    {
+     "id": "N.1.4",
+     "n": 1,
+     "row": 9,
+     "col": "C",
+     "value": "ABC"
+    },
+    {
+     "id": "N.1.5",
+     "n": 1,
+     "row": 10,
+     "col": "C",
+     "value": "20120821113456"
+    },
+    {
+     "id": "N.2.r.1",
+     "n": 1,
+     "row": 12,
+     "col": "C",
+     "value": "XYZ-0123456-887766"
+    },
+    {
+     "id": "N.2.r.2",
+     "n": 1,
+     "row": 13,
+     "col": "C",
+     "value": "XYZ-222"
+    },
+    {
+     "id": "N.2.r.3",
+     "n": 1,
+     "row": 14,
+     "col": "C",
+     "value": "ABC-554"
+    },
+    {
+     "id": "N.2.r.4",
+     "n": 1,
+     "row": 15,
+     "col": "C",
+     "value": "20120830120000"
+    },
+    {
+     "id": "C.1.1",
+     "n": 1,
+     "row": 17,
+     "col": "C",
+     "value": "GB-XYZCOMPANY-123"
+    },
+    {
+     "id": "C.1.2",
+     "n": 1,
+     "row": 18,
+     "col": "C",
+     "value": "20120830120000"
+    },
+    {
+     "id": "C.1.3",
+     "n": 1,
+     "row": 19,
+     "col": "C",
+     "value": "2"
+    },
+    {
+     "id": "C.1.4",
+     "n": 1,
+     "row": 20,
+     "col": "C",
+     "value": "20120815"
+    },
+    {
+     "id": "C.1.5",
+     "n": 1,
+     "row": 21,
+     "col": "C",
+     "value": "20120815"
+    },
+    {
+     "id": "C.1.8.1",
+     "n": 1,
+     "row": 28,
+     "col": "C",
+     "value": "GB-XYZCOMPANY-123"
+    },
+    {
+     "id": "C.2.r.3",
+     "n": 1,
+     "row": 49,
+     "col": "C",
+     "value": "GB"
+    },
+    {
+     "id": "C.2.r.4",
+     "n": 1,
+     "row": 50,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "D.1",
+     "n": 1,
+     "row": 81,
+     "col": "C",
+     "value": "MSK"
+    },
+    {
+     "id": "D.2.2a",
+     "n": 1,
+     "row": 90,
+     "col": "C",
+     "value": "50"
+    },
+    {
+     "id": "D.2.2b",
+     "n": 1,
+     "row": 91,
+     "col": "C",
+     "value": "Years",
+     "known_issue": "KI-3"
+    },
+    {
+     "id": "D.5",
+     "n": 1,
+     "row": 97,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "E.i.1.1a",
+     "n": 1,
+     "row": 166,
+     "col": "C",
+     "value": "fever 38 C"
+    },
+    {
+     "id": "E.i.1.1a",
+     "n": 2,
+     "row": 166,
+     "col": "D",
+     "value": "diarrhoea"
+    },
+    {
+     "id": "E.i.1.1a",
+     "n": 3,
+     "row": 166,
+     "col": "E",
+     "value": "neutropenia"
+    },
+    {
+     "id": "E.i.1.1b",
+     "n": 1,
+     "row": 167,
+     "col": "C",
+     "value": "GB"
+    },
+    {
+     "id": "E.i.1.1b",
+     "n": 2,
+     "row": 167,
+     "col": "D",
+     "value": "gb",
+     "known_issue": "KI-4"
+    },
+    {
+     "id": "E.i.1.1b",
+     "n": 3,
+     "row": 167,
+     "col": "E",
+     "value": "gb",
+     "known_issue": "KI-4"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 1,
+     "row": 169,
+     "col": "C",
+     "value": "15.0"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 2,
+     "row": 169,
+     "col": "D",
+     "value": "15.0"
+    },
+    {
+     "id": "E.i.2.1a",
+     "n": 3,
+     "row": 169,
+     "col": "E",
+     "value": "15.0"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 1,
+     "row": 170,
+     "col": "C",
+     "value": "10016558"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 2,
+     "row": 170,
+     "col": "D",
+     "value": "10012735"
+    },
+    {
+     "id": "E.i.2.1b",
+     "n": 3,
+     "row": 170,
+     "col": "E",
+     "value": "10029354"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 1,
+     "row": 173,
+     "col": "C",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 2,
+     "row": 173,
+     "col": "D",
+     "value": "NI"
+    },
+    {
+     "id": "E.i.3.2a",
+     "n": 3,
+     "row": 173,
+     "col": "E",
+     "value": "true"
+    },
+    {
+     "id": "E.i.3.2c",
+     "n": 3,
+     "row": 175,
+     "col": "E",
+     "value": "true"
+    },
+    {
+     "id": "E.i.4",
+     "n": 1,
+     "row": 179,
+     "col": "C",
+     "value": "20030511",
+     "cell": "2003-05-11 00:00:00+00:00",
+     "note": "Excel date cell (no TS precision); transcribed as CCYYMMDD"
+    },
+    {
+     "id": "E.i.4",
+     "n": 2,
+     "row": 179,
+     "col": "D",
+     "value": "20030511",
+     "cell": "2003-05-11 00:00:00+00:00",
+     "note": "Excel date cell (no TS precision); transcribed as CCYYMMDD"
+    },
+    {
+     "id": "E.i.4",
+     "n": 3,
+     "row": 179,
+     "col": "E",
+     "value": "20030511",
+     "cell": "2003-05-11 00:00:00+00:00",
+     "note": "Excel date cell (no TS precision); transcribed as CCYYMMDD"
+    },
+    {
+     "id": "E.i.5",
+     "n": 1,
+     "row": 180,
+     "col": "C",
+     "value": "20030518",
+     "cell": "2003-05-18 00:00:00+00:00",
+     "note": "Excel date cell (no TS precision); transcribed as CCYYMMDD"
+    },
+    {
+     "id": "E.i.5",
+     "n": 2,
+     "row": 180,
+     "col": "D",
+     "value": "20030518",
+     "cell": "2003-05-18 00:00:00+00:00",
+     "note": "Excel date cell (no TS precision); transcribed as CCYYMMDD"
+    },
+    {
+     "id": "E.i.5",
+     "n": 3,
+     "row": 180,
+     "col": "E",
+     "value": "20030518",
+     "cell": "2003-05-18 00:00:00+00:00",
+     "note": "Excel date cell (no TS precision); transcribed as CCYYMMDD"
+    },
+    {
+     "id": "E.i.7",
+     "n": 1,
+     "row": 183,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "E.i.7",
+     "n": 2,
+     "row": 183,
+     "col": "D",
+     "value": "1"
+    },
+    {
+     "id": "E.i.7",
+     "n": 3,
+     "row": 183,
+     "col": "E",
+     "value": "1"
+    },
+    {
+     "id": "G.k.1",
+     "n": 1,
+     "row": 202,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.1",
+     "n": 2,
+     "row": 202,
+     "col": "D",
+     "value": "1"
+    },
+    {
+     "id": "G.k.2.2",
+     "n": 1,
+     "row": 208,
+     "col": "C",
+     "value": "dantium"
+    },
+    {
+     "id": "G.k.2.2",
+     "n": 2,
+     "row": 208,
+     "col": "D",
+     "value": "domeridone"
+    },
+    {
+     "id": "G.k.2.3.r.1",
+     "n": 1,
+     "row": 210,
+     "col": "C",
+     "value": "asomeprazole"
+    },
+    {
+     "id": "G.k.2.3.r.1",
+     "n": 2,
+     "row": 210,
+     "col": "D",
+     "value": "domeridone"
+    },
+    {
+     "id": "G.k.8",
+     "n": 1,
+     "row": 252,
+     "col": "C",
+     "value": "0"
+    },
+    {
+     "id": "G.k.9.i.1",
+     "n": 1,
+     "row": 254,
+     "col": "C",
+     "value": "fever",
+     "known_issue": "KI-5"
+    },
+    {
+     "id": "G.k.9.i.1",
+     "n": 2,
+     "row": 254,
+     "col": "D",
+     "value": "neutropenia",
+     "known_issue": "KI-5"
+    },
+    {
+     "id": "G.k.9.i.1",
+     "n": 3,
+     "row": 254,
+     "col": "E",
+     "value": "neutropenia",
+     "known_issue": "KI-5"
+    },
+    {
+     "id": "G.k.9.i.2.r.1",
+     "n": 1,
+     "row": 256,
+     "col": "C",
+     "value": "sponsor"
+    },
+    {
+     "id": "G.k.9.i.2.r.1",
+     "n": 2,
+     "row": 256,
+     "col": "D",
+     "value": "NCA"
+    },
+    {
+     "id": "G.k.9.i.2.r.1",
+     "n": 3,
+     "row": 256,
+     "col": "E",
+     "value": "sponsor"
+    },
+    {
+     "id": "G.k.9.i.2.r.2",
+     "n": 1,
+     "row": 257,
+     "col": "C",
+     "value": "EVCTM"
+    },
+    {
+     "id": "G.k.9.i.2.r.2",
+     "n": 2,
+     "row": 257,
+     "col": "D",
+     "value": "EVCTM"
+    },
+    {
+     "id": "G.k.9.i.2.r.2",
+     "n": 3,
+     "row": 257,
+     "col": "E",
+     "value": "EVCTM"
+    },
+    {
+     "id": "G.k.9.i.2.r.3",
+     "n": 1,
+     "row": 258,
+     "col": "C",
+     "value": "1"
+    },
+    {
+     "id": "G.k.9.i.2.r.3",
+     "n": 2,
+     "row": 258,
+     "col": "D",
+     "value": "1"
+    },
+    {
+     "id": "G.k.9.i.2.r.3",
+     "n": 3,
+     "row": 258,
+     "col": "E",
+     "value": "2"
+    },
+    {
+     "id": "H.1",
+     "n": 1,
+     "row": 267,
+     "col": "C",
+     "value": "A 50 year-old female patient (patient ID 125-0871) was enrolled in trial . One week after the third cycle of chemotherapy treatment with intravenous Danthium 20 mg/kg once a week, the patient developed a fever (38° C) and diarrhoea (11th May 2003). The patient was hospitalised. Blood tests were performed and the patient was discovered to have neutropenia. This adverse event was considered as serious and unexpected.  "
+    }
+   ]
+  }
+ }
+}
