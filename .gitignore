@@ -1,0 +1,16 @@
+# Public sample files and ICH schemas: redistribution terms unconfirmed.
+# Fetch them with scripts/fetch_fixtures.py instead of committing.
+tests/fixtures/fda/
+tests/fixtures/ema/
+tests/fixtures/ich-examples/
+tests/fixtures/ich-reference/
+schemas/ich-v2.5/
+
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
