@@ -8,6 +8,23 @@ Status: **pre-alpha, v0.1 in progress.** Nothing is published yet.
 - Research notes (the standard, regional variants, existing tools, difficulty): [`docs/research.md`](docs/research.md)
 - Early prototypes: [`scratch/prototype/`](scratch/prototype/) (not part of the package)
 
+## Usage (v0.1 dev)
+
+```python
+import e2br3
+
+batch = e2br3.parse("case.xml")           # Batch (N.1) -> messages (N.2.r) -> icsr
+icsr = batch.messages[0].icsr
+icsr.safety_report_id                     # C.1.1
+icsr.reactions[0].meddra.code             # E.i.2.1b, MedDRA LLT code as sent
+icsr.drugs[0].relatedness                 # G.k.9.i, resolved to reactions by internal id
+icsr.regional                             # FDA.* / EU elements, raw pass-through
+
+errors = e2br3.validate("case.xml")       # [] when the local ICH XSD v2.5 accepts it
+```
+
+The data-element-to-XPath table is in [`src/e2br3/mapping.py`](src/e2br3/mapping.py). Known gaps and sample-data problems are in [`docs/known-issues.md`](docs/known-issues.md).
+
 ## Principles
 - Read-only. No R3 writing in v0.1.
 - Never bundles MedDRA or other licensed dictionaries. Coded values are kept as code + OID + version + displayName.
