@@ -1,0 +1,43 @@
+# Not active yet: the repository has no remote. Nothing here publishes anything.
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / py${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Install the package, pandas extra and pytest
+        run: python -m pip install ".[pandas]" pytest
+
+      # Public FDA/EMA/ICH samples and the ICH XSD set are not committed
+      # (redistribution terms unconfirmed), so they are downloaded here.
+      - name: Fetch fixtures and schemas
+        run: python scripts/fetch_fixtures.py
+
+      # Build locally so tests/test_wheel.py can check the wheel and sdist
+      # hold no fixtures, schemas or dictionary files. Not uploaded anywhere.
+      - name: Build wheel and sdist
+        run: uv build
+
+      - name: Run tests
+        run: python -m pytest -ra
