@@ -1,10 +1,12 @@
-# Known issues (v0.1, milestones 1–2)
+# Known issues (v0.1, milestones 1–3)
 
 Problems found while testing against the public samples. Nothing here was "fixed" by bending a test: each golden-value row affected is tagged with its `KI-n` in `tests/golden/ich_examples.json`, and the test asserts that it still differs, so a fix on either side gets noticed.
 
 ## Golden-value match rate (FR-2)
 
-**222 of 237 transcribed core-subset cells match (93.7%).** The other 15 are KI-1 to KI-5 below. Each is an error or a convention in the ICH spreadsheets, or a defect in a sample. None is a parser bug as far as I can tell. The SRS success criterion is 100%. That is not met as written, and it can't be met against these spreadsheets without overriding them. **Decision needed:** whether the criterion should be "100% of cells not covered by a documented known issue".
+**222 of 237 transcribed core-subset cells match (93.7%).** The other 15 are KI-1 to KI-5 below. Each is an error or a convention in the ICH spreadsheets, or a defect in a sample. None is a parser bug as far as I can tell. The SRS success criterion is 100%. That is not met as written, and it can't be met against these spreadsheets without overriding them.
+
+**Decision:** Success criterion unchanged (100%). Reported as 222/237 raw; 237/237 when the 15 cells covered by KI-1…KI-5 are excluded. KI-1, KI-3, KI-4 and KI-5 were independently re-verified against the ICH sample XML on 2026-10-21.
 
 | ID | Element | Files (rows) | Spreadsheet says | XML says / parser returns | Classification |
 | --- | --- | --- | --- | --- | --- |
@@ -24,7 +26,6 @@ Transcription notes, which are not mismatches:
 ## Sample-data observations (not parser issues)
 
 - **KI-6 (found in milestone 3, not a golden-value cell):** in FDA `FAERS2022Scenario5-3.xml`, two G.k drugs ("Drug Z (No drug exposure)" and "Drug X") carry the same internal id `59d6f5ce-…`. Since G.k.1 and G.k.9.i refer to drugs by id, the parser cannot tell them apart and gives both the same role and relatedness matrix. The parser was left unchanged. `to_rows()`/`to_frames()`/`to_csv` emit each G.k.9.i.2.r assessment exactly once and set `drug_index` to empty for it, so row counts still match the XML and nothing is attributed by guesswork. A test asserts this.
-
 - Example 3 says `D.5 = 1` (male), but its narrative says "A 50 year-old female patient". The parser reports what D.5 says.
 - The ICH Reference Instance v3.1 uses placeholder values (`C.1.1` = "C.1.1", `G.k.1` = "G.k.1"). It parses and validates, but it is useless for value checks.
 
