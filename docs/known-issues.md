@@ -23,6 +23,8 @@ Transcription notes, which are not mismatches:
 
 ## Sample-data observations (not parser issues)
 
+- **KI-6 (found in milestone 3, not a golden-value cell):** in FDA `FAERS2022Scenario5-3.xml`, two G.k drugs ("Drug Z (No drug exposure)" and "Drug X") carry the same internal id `59d6f5ce-…`. Since G.k.1 and G.k.9.i refer to drugs by id, the parser cannot tell them apart and gives both the same role and relatedness matrix. The parser was left unchanged. `to_rows()`/`to_frames()`/`to_csv` emit each G.k.9.i.2.r assessment exactly once and set `drug_index` to empty for it, so row counts still match the XML and nothing is attributed by guesswork. A test asserts this.
+
 - Example 3 says `D.5 = 1` (male), but its narrative says "A 50 year-old female patient". The parser reports what D.5 says.
 - The ICH Reference Instance v3.1 uses placeholder values (`C.1.1` = "C.1.1", `G.k.1` = "G.k.1"). It parses and validates, but it is useless for value checks.
 

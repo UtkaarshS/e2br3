@@ -17,7 +17,7 @@ from __future__ import annotations
 import re
 from datetime import date, datetime, timedelta, timezone
 from decimal import Decimal
-from typing import Literal, Optional, Union
+from typing import TYPE_CHECKING, Any, Literal, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -33,6 +33,14 @@ _TS_RE = re.compile(
 
 class _Model(BaseModel):
     model_config = ConfigDict(frozen=False, extra="forbid")
+
+    def to_dict(self) -> dict[str, Any]:
+        """FR-6: a JSON-safe dict. A nullFlavor becomes ``{"nullFlavor": "UNK"}``; absent becomes ``None``."""
+        return self.model_dump(mode="json", by_alias=True)
+
+    def to_json(self, indent: Optional[int] = None) -> str:
+        """FR-6: :meth:`to_dict` as a JSON string (UTF-8 text, non-ASCII kept as is)."""
+        return self.model_dump_json(by_alias=True, indent=indent)
 
 
 class Coded(_Model):
@@ -248,3 +256,19 @@ class Batch(_Model):
     @property
     def icsrs(self) -> list[ICSR]:
         return [m.icsr for m in self.messages if m.icsr is not None]
+
+    def to_rows(self, source: Optional[str] = None) -> dict[str, list[dict[str, Any]]]:
+        """FR-6: the four tidy tables as lists of dicts (no pandas needed). See :mod:`e2br3.export`."""
+        from .export import to_rows
+
+        return to_rows(self, source)
+
+    def to_frames(self, source: Optional[str] = None) -> "dict[str, pd.DataFrame]":
+        """FR-6: the four tidy tables as pandas DataFrames (needs the ``pandas`` extra)."""
+        from .export import to_frames
+
+        return to_frames(self, source)
+
+
+if TYPE_CHECKING:  # pragma: no cover
+    import pandas as pd

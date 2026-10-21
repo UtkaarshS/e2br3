@@ -16,7 +16,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Any, TypeVar, Union
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 
 
 class NullFlavor(str, Enum):
@@ -37,7 +37,12 @@ class Null(BaseModel):
 
     model_config = ConfigDict(frozen=True)
 
-    null_flavor: NullFlavor
+    # Exported (``to_dict()``/``to_json()``, by alias) as ``{"nullFlavor": "UNK"}``,
+    # the HL7 attribute name; both spellings are accepted on input.
+    null_flavor: NullFlavor = Field(
+        validation_alias=AliasChoices("null_flavor", "nullFlavor"),
+        serialization_alias="nullFlavor",
+    )
 
     def __bool__(self) -> bool:  # a Null is never truthy
         return False
