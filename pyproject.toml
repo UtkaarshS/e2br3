@@ -4,32 +4,55 @@ build-backend = "hatchling.build"
 
 [project]
 name = "e2br3"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Read-only parser and validator for ICH E2B(R3) ICSR XML"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [{ name = "Utkaarsh" }]
-keywords = ["pharmacovigilance", "E2B", "ICSR", "HL7", "ICH"]
+keywords = ["pharmacovigilance", "E2B", "E2B(R3)", "ICSR", "HL7", "ICH", "adverse events"]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
     "Intended Audience :: Healthcare Industry",
     "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Text Processing :: Markup :: XML",
 ]
 dependencies = [
     "lxml>=4.9",
     "pydantic>=2",
 ]
 
+[project.optional-dependencies]
+pandas = ["pandas>=2"]
+
+[project.scripts]
+e2br3 = "e2br3.cli:main"
+
+# TODO: uncomment and fill in once a public repository exists (nothing is
+# published yet; empty Project-URL values would be rejected by PyPI).
+# [project.urls]
+# Homepage = "TODO"
+# Source = "TODO"
+# Issues = "TODO"
+# Changelog = "TODO"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/e2br3"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/e2br3", "README.md", "LICENSE", "pyproject.toml"]
+include = ["src/e2br3", "README.md", "CHANGELOG.md", "LICENSE", "pyproject.toml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
