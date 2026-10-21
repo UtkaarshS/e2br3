@@ -23,6 +23,8 @@ First release. Nothing has been published yet.
   `pandas` extra). Tables: `cases`, `reactions`, `drugs`, `drug_reaction`, keyed by
   `<file>#<C.1.1>`.
 - CLI: `e2br3 validate | show | to-json | to-csv FILE...`, also as `python -m e2br3`.
+- `to-csv` writes UTF-8 with a BOM, so Excel shows non-Latin terms correctly. Piped or redirected CLI output is UTF-8.
+- `NOTICE` file acknowledging ICH copyright for transcribed example values, the HL7 schemas (not bundled) and MedDRA (never bundled).
 
 ### Security
 

@@ -70,13 +70,22 @@ def _load_all(files: Sequence[str]) -> Optional[list[tuple[str, Batch]]]:
 
 
 def _safe_stdout() -> None:
-    """Never crash on a console that cannot encode a character (e.g. cp1252 and Japanese)."""
+    """Never crash on a console that cannot encode a character (e.g. cp1252 and Japanese).
+
+    Piped or redirected output is written as UTF-8, so files and other programs get the
+    real characters. An interactive console keeps its own encoding and escapes anything
+    it cannot display.
+    """
     reconfigure = getattr(sys.stdout, "reconfigure", None)
-    if reconfigure is not None:
-        try:
+    if reconfigure is None:
+        return
+    try:
+        if sys.stdout.isatty():
             reconfigure(errors="backslashreplace")
-        except (ValueError, OSError):  # pragma: no cover
-            pass
+        else:
+            reconfigure(encoding="utf-8")
+    except (ValueError, OSError):  # pragma: no cover
+        pass
 
 
 # --------------------------------------------------------------------------- validate
@@ -222,7 +231,8 @@ def cmd_to_csv(args: argparse.Namespace) -> int:
     try:
         out.mkdir(parents=True, exist_ok=True)
         for t in TABLES:
-            with (out / f"{t}.csv").open("w", encoding="utf-8", newline="") as fh:
+            # utf-8-sig: the BOM makes Excel read the file as UTF-8 (non-Latin terms intact).
+            with (out / f"{t}.csv").open("w", encoding="utf-8-sig", newline="") as fh:
                 writer = csv.DictWriter(fh, fieldnames=list(COLUMNS[t]))
                 writer.writeheader()
                 writer.writerows(tables[t])

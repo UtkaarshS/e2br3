@@ -132,7 +132,8 @@ def test_to_json_writes_nothing_if_any_input_fails(capsys, tmp_path: Path) -> No
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
-    with path.open(encoding="utf-8", newline="") as fh:
+    assert path.read_bytes()[:3] == b"\xef\xbb\xbf", f"{path.name}: missing UTF-8 BOM (Excel needs it)"
+    with path.open(encoding="utf-8-sig", newline="") as fh:
         return list(csv.DictReader(fh))
 
 
@@ -181,8 +182,10 @@ def _python_m(*argv: str) -> subprocess.CompletedProcess[bytes]:
 def test_python_m_show_subprocess() -> None:
     proc = _python_m("show", str(require(LIT_INITIAL)))
     assert proc.returncode == 0, proc.stderr
-    # stdout is a pipe (cp1252 on Windows): unencodable text is escaped, never a crash
-    assert b"JP-DSJP-DSJ-2009-98765-1" in proc.stdout
+    # stdout is a pipe: output is UTF-8, so non-Latin terms arrive intact (no \u escapes)
+    text = proc.stdout.decode("utf-8")
+    assert "JP-DSJP-DSJ-2009-98765-1" in text
+    assert "間質性肺炎" in text and "\\u9593" not in text
 
 
 def test_python_m_to_json_is_utf8_on_a_pipe() -> None:

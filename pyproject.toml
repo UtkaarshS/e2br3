@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Read-only parser and validator for ICH E2B(R3) ICSR XML"
 readme = "README.md"
 license = "Apache-2.0"
-license-files = ["LICENSE"]
+license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.10"
 authors = [{ name = "Utkaarsh" }]
 keywords = ["pharmacovigilance", "E2B", "E2B(R3)", "ICSR", "HL7", "ICH", "adverse events"]
@@ -52,7 +52,7 @@ e2br3 = "e2br3.cli:main"
 packages = ["src/e2br3"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/e2br3", "README.md", "CHANGELOG.md", "LICENSE", "pyproject.toml"]
+include = ["src/e2br3", "README.md", "CHANGELOG.md", "LICENSE", "NOTICE", "pyproject.toml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

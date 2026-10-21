@@ -55,7 +55,7 @@ python -m e2br3 --help                                             # same CLI wi
 
 `to-csv` uses the standard `csv` module, so it works without pandas. Wildcards are expanded by the CLI itself, so they also work in cmd.exe and PowerShell. Errors are one line on stderr, never a traceback.
 
-`validate` needs the ICH ICSR XML Schema Set v2.5 locally: pass `--schema-dir`, set `E2BR3_SCHEMA_DIR`, or run `python scripts/fetch_fixtures.py` in a checkout. It is not bundled (see below).
+`validate` needs the ICH ICSR XML Schema Set v2.5 locally: pass `--schema-dir`, set `E2BR3_SCHEMA_DIR`, or run `python scripts/fetch_fixtures.py` in a checkout. It is not bundled, because it contains third-party HL7 schemas (see `NOTICE`).
 
 ## Principles
 
@@ -69,7 +69,7 @@ The ICH example golden values match 222 of 237 cells raw, and 237 of 237 when th
 
 ## Test data
 
-The public FDA, EMA and ICH sample files and the ICH XSD set are not committed, because their redistribution terms are unconfirmed. Fetch them, then run the tests:
+The public FDA, EMA and ICH sample files and the ICH XSD set are not committed. The XSD set includes HL7 core schemas, which are third-party content, so it is fetched from the official source rather than redistributed. Fetch them, then run the tests:
 
 ```
 python scripts/fetch_fixtures.py
@@ -78,6 +78,8 @@ python -m pytest
 
 ## Licence and MedDRA
 
-e2br3 is licensed under Apache-2.0 (see [`LICENSE`](LICENSE)).
+Apache-2.0. See `LICENSE` and `NOTICE`.
+
+**ICH:** e2br3 implements the ICH E2B(R3) specification. The golden test values in `tests/golden/` are transcribed from the ICH E2B(R3) Example Instances, © International Council for Harmonisation (ICH), and are used under ICH's terms, which permit reuse with acknowledgement of ICH's copyright. e2br3 is not affiliated with or endorsed by ICH.
 
 **MedDRA:** e2br3 does not include, bundle or distribute MedDRA or any other licensed terminology (EDQM, WHODrug and so on). It only passes through the codes, code-system OIDs and versions that appear in your XML. MedDRA® is a registered trademark of ICH, and using MedDRA terms requires your own licence from the MSSO. The same applies to the ICH sample files and schemas, which are downloaded by a script and not redistributed here.

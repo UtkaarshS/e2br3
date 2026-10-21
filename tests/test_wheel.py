@@ -39,7 +39,7 @@ def test_wheel_contains_code_only() -> None:
     code = [n for n in names if not n.startswith(dist_info)]
     assert code and all(n.startswith("e2br3/") and n.endswith(".py") for n in code), code
     assert {n[len(dist_info):] for n in names if n.startswith(dist_info)} <= {
-        "METADATA", "WHEEL", "RECORD", "entry_points.txt", "licenses/LICENSE",
+        "METADATA", "WHEEL", "RECORD", "entry_points.txt", "licenses/LICENSE", "licenses/NOTICE",
     }
     for n in names:
         assert not FORBIDDEN.search(n), n
@@ -60,4 +60,4 @@ def test_sdist_contains_no_fixtures_or_schemas() -> None:
     assert names
     for n in names:
         assert not FORBIDDEN.search(n), n
-        assert n.split("/")[0] in {"src", "README.md", "CHANGELOG.md", "LICENSE", "pyproject.toml", ".gitignore", "PKG-INFO"}, n
+        assert n.split("/")[0] in {"src", "README.md", "CHANGELOG.md", "LICENSE", "NOTICE", "pyproject.toml", ".gitignore", "PKG-INFO"}, n

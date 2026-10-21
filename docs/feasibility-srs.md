@@ -59,7 +59,7 @@ Technical and regulatory feasibility are high, market feasibility is low, and le
 | FR-2 | Typed core-subset models (pydantic v2), listed below | Fields match the ICH Example Instances v2.0 XLS golden values 100% |
 | FR-3 | Every field is `Value \| NullFlavor \| absent`, never collapsed to None. The NullFlavor codes are NI, MSK, UNK, NA, ASKU, NASK, NINF and PINF | Unit tests for each flavor seen in the FDA and EMA samples |
 | FR-4 | Coded values are stored as code + system OID + version + displayName, with no dictionary lookup | MedDRA LLT codes round-trip unchanged |
-| FR-5 | `validate(path)` checks against the bundled XSD v2.5 and returns errors with line numbers | Known-bad fixtures produce the expected errors |
+| FR-5 | `validate(path)` checks against a locally fetched ICH XSD Set v2.5 (not bundled: it contains third-party HL7 schemas; decided 2026-10-21) and returns errors with line numbers | Known-bad fixtures produce the expected errors |
 | FR-6 | Export: `to_dict()`, `to_json()`, and `to_frames()` returning cases, reactions, drugs and drug\_reaction tables keyed by case | Row counts match the source XML |
 | FR-7 | CLI: `e2br3 validate \| show \| to-json \| to-csv FILE...` | Runs on Windows and Linux |
 | FR-8 | Regional elements (FDA.\*, EU) are kept as raw pass-through key–value pairs | FDA scenario files keep their FDA.\* nodes |

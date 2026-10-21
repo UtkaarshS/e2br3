@@ -1,0 +1,29 @@
+e2br3
+Copyright 2026 Utkaarsh
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party material
+--------------------
+
+ICH E2B(R3)
+  This software implements the ICH E2B(R3) Individual Case Safety Report
+  specification. The file tests/golden/ich_examples.json contains values
+  transcribed from the ICH E2B(R3) Example Instances. That material is
+  Copyright (c) International Council for Harmonisation of Technical
+  Requirements for Pharmaceuticals for Human Use (ICH). ICH documents "may be
+  used, reproduced, incorporated into other works, adapted, modified,
+  translated or distributed under a public license provided that the ICH's
+  copyright in the document is acknowledged at all times."
+  e2br3 is not affiliated with or endorsed by ICH.
+
+ICH ICSR XML schemas (HL7)
+  The ICH ICSR XML Schema Set includes HL7 v3 core schemas, which are
+  third-party content. e2br3 does NOT bundle or redistribute these schemas.
+  Users fetch them from the official source (scripts/fetch_fixtures.py) and
+  pass their location to validate().
+
+MedDRA
+  MedDRA terminology is licensed by the MedDRA MSSO and may not be
+  redistributed. e2br3 never bundles MedDRA: coded values are carried as
+  codes, code-system OIDs and versions only.
