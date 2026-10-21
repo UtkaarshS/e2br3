@@ -55,7 +55,10 @@ python -m e2br3 --help                                             # same CLI wi
 
 `to-csv` uses the standard `csv` module, so it works without pandas. Wildcards are expanded by the CLI itself, so they also work in cmd.exe and PowerShell. Errors are one line on stderr, never a traceback.
 
-`validate` needs the ICH ICSR XML Schema Set v2.5 locally: pass `--schema-dir`, set `E2BR3_SCHEMA_DIR`, or run `python scripts/fetch_fixtures.py` in a checkout. It is not bundled, because it contains third-party HL7 schemas (see `NOTICE`).
+`validate` needs the ICH ICSR XML Schema Set v2.5 locally. It is not bundled, because it contains third-party HL7 schemas (see `NOTICE`). To get it:
+
+1. Open the [ICH ICSR XML Schema Set v2.5](https://www.fda.gov/media/157992/download?attachment) link in a browser and save the zip. fda.gov blocks scripted downloads, so a browser is needed.
+2. Unzip it anywhere, then pass that folder with `--schema-dir` or set `E2BR3_SCHEMA_DIR`. In a checkout, `python scripts/fetch_fixtures.py --zip schemas/ich-v2.5=PATH/TO/download.zip` puts it in the default place.
 
 ## Principles
 
@@ -75,6 +78,8 @@ The public FDA, EMA and ICH sample files and the ICH XSD set are not committed. 
 python scripts/fetch_fixtures.py
 python -m pytest
 ```
+
+The EMA samples download automatically. fda.gov blocks scripted downloads, so the script prints a browser link for each FDA-hosted source it could not get. Save each zip and pass it with `--zip FOLDER=PATH`. Tests that need a missing source skip with a message. CI runs without the FDA-hosted files, so the full suite, including the golden values, runs only locally.
 
 ## Licence and MedDRA
 

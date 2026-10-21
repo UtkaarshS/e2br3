@@ -13,8 +13,10 @@ from e2br3.parse import make_parser
 from conftest import (
     EMA,
     FDA,
+    FETCH_HINT,
     LIT_INITIAL,
     SCENARIO6,
+    full_sample_set,
     is_ack,
     params_or_skip,
     require,
@@ -51,8 +53,8 @@ def test_ack_is_rejected_cleanly(path: Path) -> None:
 
 def test_sample_counts() -> None:
     """The fetched set is the one the SRS was written against: 27 ICSR batches + 1 ACK."""
-    if not ALL:
-        pytest.skip("no sample fixtures")
+    if not full_sample_set():
+        pytest.skip(f"incomplete sample set ({FETCH_HINT})")
     assert len(list(FDA.glob("*.xml"))) == 10
     assert len(list(EMA.glob("*.xml"))) == 11
     assert len(ICSRS) == 27

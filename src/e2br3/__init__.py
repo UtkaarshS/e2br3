@@ -28,7 +28,7 @@ from .nullflavor import Null, NullFlavor, Nullable, flavor_of, is_null
 from .parse import E2BParseError, parse
 from .validate import SchemaNotFoundError, ValidationError, validate
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "parse",

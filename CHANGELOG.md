@@ -4,9 +4,23 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [Semantic Versioning](https://semver.org/).
 
-## [0.1.0] - Unreleased
+## [0.1.1] - 2026-10-21
 
-First release. Nothing has been published yet.
+### Fixed
+
+- `scripts/fetch_fixtures.py` no longer crashes when fda.gov blocks the download.
+  It warns, prints a browser link, and accepts a manually saved zip with
+  `--zip FOLDER=PATH`. `--allow-missing` makes CI continue; tests that need a
+  missing source skip.
+- README: manual steps to get the ICH XSD set for `validate`.
+
+### Added
+
+- Project URLs (GitHub repository, issues, changelog) on PyPI.
+
+## [0.1.0] - 2026-10-21
+
+First release.
 
 ### Added
 

@@ -8,7 +8,7 @@ from lxml import etree
 
 import e2br3
 from e2br3 import Null, NullFlavor, Patient, Reaction, flavor_of, is_null
-from conftest import EMA, FDA, ICH_EXAMPLES, LIT_INITIAL, require, sample_xmls
+from conftest import EMA, FDA, ICH_EXAMPLES, LIT_INITIAL, full_sample_set, require, sample_xmls
 
 HL7 = "{urn:hl7-org:v3}"
 
@@ -51,7 +51,10 @@ def test_every_nullflavor_in_the_samples_is_an_ig_code() -> None:
         for el in etree.parse(str(f), etree.XMLParser(resolve_entities=False, no_network=True)).iter():
             if isinstance(el.tag, str) and el.get("nullFlavor"):
                 seen[el.get("nullFlavor")] += 1
-    assert set(seen) == ALL_FLAVORS_IN_SAMPLES
+    if full_sample_set():
+        assert set(seen) == ALL_FLAVORS_IN_SAMPLES
+    else:  # partial set (e.g. CI without the fda.gov files): no unexpected codes
+        assert set(seen) <= ALL_FLAVORS_IN_SAMPLES
     for code in seen:
         NullFlavor(code)  # every one maps onto the enum
 

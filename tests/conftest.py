@@ -35,6 +35,15 @@ def sample_xmls() -> list[Path]:
     return sorted(p for p in FIXTURES.rglob("*.xml") if p.is_file())
 
 
+def full_sample_set() -> bool:
+    """True when every sample source is present (FDA, EMA, ICH examples, ICH reference).
+
+    On CI, fda.gov blocks the download, so usually only the EMA samples are there.
+    Tests that count or enumerate the whole set use this to skip on a partial set.
+    """
+    return all(d.is_dir() and any(d.rglob("*.xml")) for d in (FDA, EMA, ICH_EXAMPLES, ICH_REFERENCE))
+
+
 def is_ack(path: Path) -> bool:
     return "ACK" in path.name.upper()
 
