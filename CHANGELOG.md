@@ -4,6 +4,17 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Security
+
+- `to-csv` no longer writes text that a spreadsheet would run as a formula
+  (CSV injection). ICSR files come from other organisations, so a narrative or
+  product name starting with `=`, `+`, `-`, `@`, tab or carriage return is now
+  written with a leading apostrophe. Numbers written as text, such as `-0.5`,
+  are unchanged. `--no-formula-guard` writes the text exactly as parsed. JSON
+  output, `to_rows()` and `to_frames()` are unchanged.
+
 ## [0.1.1] - 2026-10-21
 
 ### Fixed

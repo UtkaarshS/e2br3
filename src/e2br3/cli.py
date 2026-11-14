@@ -219,6 +219,26 @@ def cmd_to_json(args: argparse.Namespace) -> int:
     return 0
 
 
+# Text that a spreadsheet would run as a formula (OWASP "CSV injection"). ICSR files
+# come from other organisations, so narrative, product and reporter text is untrusted.
+_FORMULA_PREFIXES = ("=", "+", "-", "@", "\t", "\r")
+
+
+def _csv_safe(value: Any) -> Any:
+    """Prefix formula-like text with an apostrophe so a spreadsheet shows it as text.
+
+    Only strings are touched, and numbers written as text ("-0.5", "+3") are left
+    alone: they are data, not formulas, and Decimal cells arrive as strings.
+    """
+    if not isinstance(value, str) or not value.startswith(_FORMULA_PREFIXES):
+        return value
+    try:
+        float(value)
+    except ValueError:
+        return "'" + value
+    return value
+
+
 def cmd_to_csv(args: argparse.Namespace) -> int:
     loaded = _load_all(args.files)
     if loaded is None:
@@ -235,7 +255,10 @@ def cmd_to_csv(args: argparse.Namespace) -> int:
             with (out / f"{t}.csv").open("w", encoding="utf-8-sig", newline="") as fh:
                 writer = csv.DictWriter(fh, fieldnames=list(COLUMNS[t]))
                 writer.writeheader()
-                writer.writerows(tables[t])
+                if args.formula_guard:
+                    writer.writerows({k: _csv_safe(v) for k, v in row.items()} for row in tables[t])
+                else:
+                    writer.writerows(tables[t])
     except OSError as exc:
         _err(f"{out}: cannot write ({exc.strerror or exc})")
         return 1
@@ -282,6 +305,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     c = sub.add_parser("to-csv", help="export cases/reactions/drugs/drug_reaction CSV tables")
     c.add_argument("-o", "--output", metavar="DIR", required=True, help="output directory")
+    c.add_argument("--no-formula-guard", dest="formula_guard", action="store_false",
+                   help="write text exactly as parsed, even if a spreadsheet would run it as a formula")
     c.add_argument("files", nargs="+", metavar="FILE")
     c.set_defaults(func=cmd_to_csv)
     return p
