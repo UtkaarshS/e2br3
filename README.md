@@ -2,15 +2,15 @@
 
 A read-only Python library and CLI that validates **ICH E2B(R3) ICSR** XML and parses it into typed objects that export to JSON, CSV and pandas.
 
-Status: **alpha, v0.1.0 unreleased.** Nothing is published yet. See [`CHANGELOG.md`](CHANGELOG.md).
+Status: **alpha.** Published on [PyPI](https://pypi.org/project/e2br3/). See [`CHANGELOG.md`](https://github.com/UtkaarshS/e2br3/blob/main/CHANGELOG.md).
 
-- Spec and feasibility: [`docs/feasibility-srs.md`](docs/feasibility-srs.md)
-- Known issues and sample-data problems: [`docs/known-issues.md`](docs/known-issues.md)
-- Research notes (the standard, regional variants, existing tools, difficulty): [`docs/research.md`](docs/research.md)
+- Spec and feasibility: [`docs/feasibility-srs.md`](https://github.com/UtkaarshS/e2br3/blob/main/docs/feasibility-srs.md)
+- Known issues and sample-data problems: [`docs/known-issues.md`](https://github.com/UtkaarshS/e2br3/blob/main/docs/known-issues.md)
+- Research notes (the standard, regional variants, existing tools, difficulty): [`docs/research.md`](https://github.com/UtkaarshS/e2br3/blob/main/docs/research.md)
 
 ## Install
 
-Not on PyPI yet. From a checkout:
+From PyPI (`pip install e2br3`, or `pip install "e2br3[pandas]"`), or from a checkout:
 
 ```
 pip install .            # lxml + pydantic only
@@ -41,7 +41,7 @@ tables = batch.to_rows("case.xml")        # {"cases": [...], "reactions": [...],
 frames = batch.to_frames("case.xml")      # the same four tables as DataFrames (needs the pandas extra)
 ```
 
-Every field is `value | Null(nullFlavor) | None`, where `None` means the element was absent. A nullFlavor is never collapsed to `None`. The four tables are keyed by `case_key` = `"<file>#<C.1.1>"`, and `drug_reaction` has one row per G.k.9.i.2.r assessment. The data-element-to-XPath table is in [`src/e2br3/mapping.py`](src/e2br3/mapping.py).
+Every field is `value | Null(nullFlavor) | None`, where `None` means the element was absent. A nullFlavor is never collapsed to `None`. The four tables are keyed by `case_key` = `"<file>#<C.1.1>"`, and `drug_reaction` has one row per G.k.9.i.2.r assessment. The data-element-to-XPath table is in [`src/e2br3/mapping.py`](https://github.com/UtkaarshS/e2br3/blob/main/src/e2br3/mapping.py).
 
 ## Quickstart: CLI
 
@@ -68,7 +68,7 @@ python -m e2br3 --help                                             # same CLI wi
 
 ## Known issues
 
-The ICH example golden values match 222 of 237 cells raw, and 237 of 237 when the 15 cells covered by documented spreadsheet or sample errors are excluded. Details, and the other sample-data problems, are in [`docs/known-issues.md`](docs/known-issues.md).
+The ICH example golden values match 222 of 237 cells raw, and 237 of 237 when the 15 cells covered by documented spreadsheet or sample errors are excluded. Details, and the other sample-data problems, are in [`docs/known-issues.md`](https://github.com/UtkaarshS/e2br3/blob/main/docs/known-issues.md).
 
 ## Test data
 

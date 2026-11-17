@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.1.2] - 2026-11-17
 
 ### Security
 
@@ -14,6 +14,13 @@ All notable changes to this project are documented here. The format follows
   written with a leading apostrophe. Numbers written as text, such as `-0.5`,
   are unchanged. `--no-formula-guard` writes the text exactly as parsed. JSON
   output, `to_rows()` and `to_frames()` are unchanged.
+
+### Changed
+
+- README: says the package is on PyPI and how to install it from there. Its
+  links are now absolute GitHub URLs, so they work on the PyPI project page.
+- Includes the 0.1.1 changes below; 0.1.1 was tagged in the changelog but never
+  uploaded to PyPI.
 
 ## [0.1.1] - 2026-10-21
 

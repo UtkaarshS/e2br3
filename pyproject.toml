@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "e2br3"
-version = "0.1.1"
+version = "0.1.2"
 description = "Read-only parser and validator for ICH E2B(R3) ICSR XML"
 readme = "README.md"
 license = "Apache-2.0"
